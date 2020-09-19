@@ -30,12 +30,14 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  'What do you want to eat Entry',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 16,
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: TextField(
+                    textAlign: TextAlign.left,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: "Your desired meal"
+                    ),
                   ),
                 ),
               ],
@@ -59,12 +61,14 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  'Unit of Measurement Entry',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                    fontSize: 16,
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: TextField(
+                    textAlign: TextAlign.end,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: "Your unit"
+                    ),
                   ),
                 ),
               ],
@@ -88,28 +92,19 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    Widget mostPopularSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: Text(
-        'Most Popular',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),  
+    Widget listButtonSection = Container(
+    padding: EdgeInsets.all(8.0),
+    child: FlatButton(
+      onPressed: () {
+        //do something
+      },
+      color: Colors.grey,
+      child: Row(children: <Widget>[
+        Text("Access Your Existing Lists",
+        style: TextStyle(fontSize: 18),),
+      ],
       ),
-    );
-
-    Widget recommendedSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: Text(
-        'Recommended',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),
-      ),
+    ),
     );
 
     return MaterialApp(
@@ -144,8 +139,7 @@ class MyApp extends StatelessWidget {
           children: [
             titleSection,
             buttonSection,
-            mostPopularSection,
-            recommendedSection,
+            listButtonSection,
           ],
         ),
       ),
